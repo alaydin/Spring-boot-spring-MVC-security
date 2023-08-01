@@ -1,0 +1,2 @@
+ALTER TABLE members
+ALTER COLUMN active SET DEFAULT 1;

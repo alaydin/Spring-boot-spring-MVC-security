@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New User</title>
+</head>
+<body>
+<h2>Add New User</h2>
+<hr>
+
+<!-- Add the form for adding a new user -->
+<form th:action="@{/saveUser}" method="post">
+    <label for="user_id">User ID:</label>
+    <input type="text" id="user_id" name="user_id" required th:field="${member.user_id}">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required th:field="${member.password}">
+
+    <label for="role">Role:</label>
+    <select id="role" name="role" required>
+        <option value="EMPLOYEE">Employee</option>
+        <option value="MANAGER">Manager</option>
+        <option value="ADMIN">Admin</option>
+    </select>
+
+    <input type="submit" value="Save">
+</form>
+
+<hr>
+
+<!-- Add a link to go back to the home page -->
+<p>
+    <a th:href="@{/home}">Back to Home</a>
+</p>
+</body>
+</html>
